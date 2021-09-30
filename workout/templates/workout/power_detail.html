@@ -1,0 +1,29 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+  <h1>
+    {% if workout.type == 'po' %}
+      Силовая
+    {% elif workout.type == 'fu' %}
+      Функциональная
+    {% elif workout.type == 'ca' %}
+      Кардио
+    {% elif workout.type == 'cr' %}
+      Кросфит
+    {% elif workout.type == 'pi' %}
+      Пилатес
+    {% elif workout.type == 're' %}
+      Реабилитационная
+    {% endif %}
+  </h1>
+  <h2>Название: {{ workout.title }}</h2>
+  <a href="{% url 'workout-update' workout.id %}">Редактировать</a>
+  <a href="{% url 'workout-delete' workout.id %}">Удалить</a>
+  <br>
+  <br>
+  <p><strong>Программа тренировки:</strong></p>
+  <p>{{ workout.content|safe|linebreaks }}</p>
+
+
+{% endblock %}

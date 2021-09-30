@@ -1,0 +1,33 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>
+    {% if workout_list.first.type == 'po' %}
+      Список силовых тренировок:
+    {% elif workout_list.first.type == 'fu' %}
+      Список функциональных тренировок:
+    {% elif workout_list.first.type == 'ca' %}
+      Список кардио тренировок:
+    {% elif workout_list.first.type == 'cr' %}
+      Список кросфит тренировок:
+    {% elif workout_list.first.type == 'pi' %}
+      Список пилатес тренировок:
+    {% elif workout_list.first.type == 're' %}
+      Список реабилитационных тренировок:
+    {% endif %}
+    </h1>
+
+    {% if workout_list %}
+    <ul class="list-group">
+
+      {% for workout in workout_list %}
+      <li class="list-group-item">
+        <a href="{{ workout.get_absolute_url }}">{{ workout.title }}</a>
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>Еще нет записанных тренировок</p>
+    {% endif %}
+{% endblock %}
