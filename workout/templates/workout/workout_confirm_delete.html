@@ -1,7 +1,14 @@
 {% extends "base_generic.html" %}
+{% block style %}
+  <style>
+   .text {
+    text-align:  center;
+   }
+  </style>
 
+{% endblock %}
 {% block content %}
-
+<div class="text">
 <h1>Удаление тренировки</h1>
 
 <p>Вы уверены что хотите удалить: {{ workout }}?</p>
@@ -10,5 +17,5 @@
   {% csrf_token %}
   <input type="submit" value="Да удалить" />
 </form>
-
+</div>
 {% endblock %}

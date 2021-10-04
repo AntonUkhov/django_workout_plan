@@ -1,13 +1,18 @@
 {% extends "base_generic.html" %}
+{% block style %}
+
+
+{% endblock %}
 
 {% block content %}
+<center>
+    <form action="" method="post">
+        {% csrf_token %}
+        <table>
+        {{ form.as_table }}
+        </table>
+        <input type="submit" value="Принять" />
 
-<form action="" method="post">
-    {% csrf_token %}
-    <table>
-    {{ form.as_table }}
-    </table>
-    <input type="submit" value="Принять" />
-
-</form>
+    </form>
+</center>
 {% endblock %}

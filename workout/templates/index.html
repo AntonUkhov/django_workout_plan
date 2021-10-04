@@ -1,81 +1,102 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-<div class="row">
-  <div class="col-6">
-    <h1>Всего тренировок:</h1>
-  </div>
-  <div class="col-6">
-    <h1>{{ all_workout }}</h1>
-  </div>
-</div>
-<br>
-<div>
-<h2>Разновидность тренировок и их количество:</h2>
-</div>
-<div class="row">
-  <div class="col">
-    <div class="card" style="width: 18rem;">
-      <img src="https://mesotropin.com/wp-content/uploads/2018/06/d-bal-max-results-1-300x300.jpg" class="card-img-top" alt="power">
-      <div class="card-body">
-        <h5 class="card-title"><strong>Силовые:</strong> {{ powers }}</h5>
-        <p class="card-text">Силовые тренировки, для набора мышечной масы.</p>
-        <a href="{% url 'powers' %}" class="btn btn-primary">Выбрать</a>
-      </div>
+
+
+
+    <div class="back_re">
+       <div class="container">
+          <div class="row">
+             <div class="col-md-12">
+                <div class="title">
+                 <h2>Всего тренировок:  {{ all_workout }}</h2>
+                </div>
+             </div>
+          </div>
+       </div>
     </div>
-  </div>
-  <div class="col">
-    <div class="card" style="width: 18rem;">
-      <img src="https://www.fitster.fi/wp-content/uploads/2020/07/Kotiohjelma_keskivartalon-ja-jalkojen-tehopaketti_0-300x300.jpg" class="card-img-top" alt="functional">
-      <div class="card-body">
-        <h5 class="card-title"><strong>Функциональные:</strong> {{ functionals }}</h5>
-        <p class="card-text">Функциональные тренировки, для выносливости</p>
-        <a href="{% url 'functionals' %}" class="btn btn-primary">Выбрать</a>
-      </div>
+
+
+    <div  class="trainers">
+       <div class="container">
+          <div class="row">
+             <div class="col-md-12">
+                <div class="titlepage">
+                   <p>Разновидность тренировок и их количество: </p>
+                </div>
+             </div>
+          </div>
+          <div class="row">
+             <div class="col-md-4">
+                <div id="trai" class="trainer_box">
+                   <div class="trainer_img">
+                      <figure><img src="https://mesotropin.com/wp-content/uploads/2018/06/d-bal-max-results-1-300x300.jpg" class="card-img-top" alt="power" "/></figure>
+                   </div>
+                   <div class="trainer">
+                      <h3>Силовые: {{ powers }} </h3>
+                      <a href="{% url 'powers' %}" class="btn btn-primary">Выбрать</a>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-4">
+                <div id="trai" class="trainer_box">
+                   <div class="trainer_img">
+                      <figure><img src="https://www.fitster.fi/wp-content/uploads/2020/07/Kotiohjelma_keskivartalon-ja-jalkojen-tehopaketti_0-300x300.jpg" alt="#"/></figure>
+                   </div>
+                   <div class="trainer">
+                      <h3>Функциональные: {{ functionals }} </h3>
+                      <a href="{% url 'functionals' %}" class="btn btn-primary">Выбрать</a>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-4">
+                <div id="trai" class="trainer_box">
+                   <div class="trainer_img">
+                      <figure><img src="https://images.shape.mdpcdn.com/sites/shape.com/files/styles/channel_masonry/public/technogym-skillrun.jpg?itok=6WeBw7b9" alt="#"/></figure>
+                   </div>
+                   <div class="trainer">
+                      <h3>Кардио: {{ cardios }} </h3>
+                      <a href="{% url 'cardios' %}" class="btn btn-primary">Выбрать</a>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-4">
+                <div id="trai" class="trainer_box">
+                   <div class="trainer_img">
+                      <figure><img src="https://m.media-amazon.com/images/S/aplus-seller-content-images-us-east-1/ATVPDKIKX0DER/AYOYVA63AO5OA/B01NAF2F69/m0t3Id3aT265._UX300_TTW__.jpg" alt="#"/></figure>
+                   </div>
+                   <div class="trainer">
+                      <h3>Кросфит: {{ crossfits }} </h3>
+                      <a href="{% url 'crossfits' %}" class="btn btn-primary">Выбрать</a>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-4">
+                <div id="trai" class="trainer_box">
+                   <div class="trainer_img">
+                      <figure><img src="https://cdn.100sp.ru/cache_pictures/487639776/thumb300" alt="#"/></figure>
+                   </div>
+                   <div class="trainer">
+                      <h3>Пилатес: {{ pilatess }} </h3>
+                      <a href="{% url 'pilatess' %}" class="btn btn-primary">Выбрать</a>
+                   </div>
+                </div>
+             </div>
+             <div class="col-md-4">
+                <div id="trai" class="trainer_box">
+                   <div class="trainer_img">
+                      <figure><img src="https://elebda3.com/files/elebda3.com-01080856El6W5.jpg" alt="#"/></figure>
+                   </div>
+                   <div class="trainer">
+                      <h3>Реабилитация: {{ rehabs }} </h3>
+                      <a href="{% url 'rehabs' %}" class="btn btn-primary">Выбрать</a>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
     </div>
-  </div>
-  <div class="col">
-    <div class="card" style="width: 18rem;">
-      <img src="https://images.shape.mdpcdn.com/sites/shape.com/files/styles/channel_masonry/public/technogym-skillrun.jpg?itok=6WeBw7b9" class="card-img-top" alt="cardio">
-      <div class="card-body">
-        <h5 class="card-title"><strong>Кардио:</strong> {{ cardios }}</h5>
-        <p class="card-text">Кардио тренировки, для похудения</p>
-        <a href="{% url 'cardios' %}" class="btn btn-primary">Выбрать</a>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col">
-    <div class="card" style="width: 18rem;">
-      <img src="https://m.media-amazon.com/images/S/aplus-seller-content-images-us-east-1/ATVPDKIKX0DER/AYOYVA63AO5OA/B01NAF2F69/m0t3Id3aT265._UX300_TTW__.jpg" class="card-img-top" alt="crossfit">
-      <div class="card-body">
-        <h5 class="card-title"><strong>Кросфит:</strong> {{ crossfits }}</h5>
-        <p class="card-text">Кроссфит тренировки, для всех мышц</p>
-        <a href="{% url 'crossfits' %}" class="btn btn-primary">Выбрать</a>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card" style="width: 18rem;">
-      <img src="https://cdn.100sp.ru/cache_pictures/487639776/thumb300" class="card-img-top" alt="pilates">
-      <div class="card-body">
-        <h5 class="card-title"><strong>Пилатес:</strong> {{ pilatess }}</h5>
-        <p class="card-text">Пилатес тренировки, для растяжки и тонуса</p>
-        <a href="{% url 'pilatess' %}" class="btn btn-primary">Выбрать</a>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card" style="width: 18rem;">
-      <img src="https://elebda3.com/files/elebda3.com-01080856El6W5.jpg" class="card-img-top" alt="rehab">
-      <div class="card-body">
-        <h5 class="card-title"><strong>Реабилитация:</strong> {{ rehabs }}</h5>
-        <p class="card-text">Реабилитационные тренировки, для востановления после травм</p>
-        <a href="{% url 'rehabs' %}" class="btn btn-primary">Выбрать</a>
-      </div>
-    </div>
-  </div>
-</div>
+
+
 
 {% endblock %}

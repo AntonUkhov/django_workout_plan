@@ -1,6 +1,14 @@
 {% extends "base_generic.html" %}
+{% block style %}
+  <style>
+   .text {
+    text-align:  center;
+   }
+  </style>
 
+{% endblock %}
 {% block content %}
+<div class="text">
     <h1>
     {% if workout_list.first.type == 'po' %}
       Список силовых тренировок:
@@ -17,17 +25,20 @@
     {% endif %}
     </h1>
 
+
     {% if workout_list %}
-    <ul class="list-group">
 
-      {% for workout in workout_list %}
-      <li class="list-group-item">
-        <a href="{{ workout.get_absolute_url }}">{{ workout.title }}</a>
-      </li>
-      {% endfor %}
+        <ul class="list-group">
 
-    </ul>
+          {% for workout in workout_list %}
+          <li class="list-group-item">
+            <a href="{{ workout.get_absolute_url }}">{{ workout.title }}</a>
+          </li>
+          {% endfor %}
+
+        </ul>
     {% else %}
-      <p>Еще нет записанных тренировок</p>
+        <p>Еще нет записанных тренировок</p>
     {% endif %}
+</div>
 {% endblock %}

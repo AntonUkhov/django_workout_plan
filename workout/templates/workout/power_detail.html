@@ -1,7 +1,16 @@
 {% extends "base_generic.html" %}
 
-{% block content %}
+{% block style %}
+  <style>
+   .text {
+    text-align:  center;
+   }
+  </style>
 
+{% endblock %}
+
+{% block content %}
+<div class="text">
   <h1>
     {% if workout.type == 'po' %}
       Силовая
@@ -17,6 +26,8 @@
       Реабилитационная
     {% endif %}
   </h1>
+
+
   <h2>Название: {{ workout.title }}</h2>
   <a href="{% url 'workout-update' workout.id %}">Редактировать</a>
   <a href="{% url 'workout-delete' workout.id %}">Удалить</a>
@@ -25,5 +36,5 @@
   <p><strong>Программа тренировки:</strong></p>
   <p>{{ workout.content|safe|linebreaks }}</p>
 
-
+</div>
 {% endblock %}
